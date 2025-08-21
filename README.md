@@ -1,13 +1,10 @@
-﻿# PasswordGenesis
--Updates:
-  -Give advice for passwords such as where to store, what makes good password, methods of cracking passwords
-  -Recommend password managers
-  -FAQ: how does it work, how is this safe, etc
-  -Make visually interesting with animations
-Animation Example: https://www.avast.com/en-us/random-password-generator#pc
+# PasswordGenesis
 
+## Updates
 
+- Give advice for passwords such as where to store them, what makes a good password, and methods of cracking passwords.
+- Recommend password managers.
+- FAQ: how does it work, how is this safe, etc.
+- Make it visually interesting with animations.
 
-
-
-
+**Animation example:** <https://www.avast.com/en-us/random-password-generator#pc>
