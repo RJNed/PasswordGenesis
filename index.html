@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <section class="upper-container"> 
+            <!-- Make visually interesting with animations -->
+
+            <!-- Give advice for passwords such as where to store, what makes good password, methods of cracking passwords -->
+            <!-- Recommend password managers -->
+            <!-- FAQ: how does it work, how is this safe, etc -->
+
+            <!-- UI and layout Example: https://proton.me/pass/password-generator -->
+            <!-- Animation Example: https://www.avast.com/en-us/random-password-generator#pc -->
+             
+            <div class="userinput">
+
+                <div class = "left">
+                    <h1>Generate a unique password!</h1>
+                    <p>Genesis of security starts with a good password</p>
+                    <p for="userpasslen" class="userpasslabel">Password length: </p>
+                    <div class="slidecontainer">
+                        <input type="range" min="4" max="32" value="16" class="slider" id="passRange" name="sliderName">
+                    </div>
+                    <output for="passRange" type="number" id="userpasslen"></output>
+                </div>
+                
+                <div class="center">
+                    <div class="output">
+                        <output class="passdisplay" aria-live="polite"></output> <!-- I want to make the password display animated -->
+                        <!-- After about a second of random characters, left to right start dropping in the actual password -->
+                        <!-- This would be far more visually interesting -->
+                    </div>
+                    <button type="button" class="newpassbtn" onclick="password()">Generate Password</button>
+                </div>
+
+                <div class="right">
+                    <div class="right-upper">
+                        <p>Password Strength:</p>
+                        <div id="box"></div>
+                        <p class="strength"></p>
+                    </div>
+                    <div class="right-mid">
+                        <p>Time to Crack:</p>
+                        <p class="timeToCrack"></p>
+                    </div>
+                    <div class="right-lower">
+                        <p id="muted-p">*All time estimates are based off of the 2025 Hive Systems Password Table*</p>
+                        <a href="https://www.hivesystems.com/blog/are-your-passwords-in-the-green" target="_blank">Clink here to see the Table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
