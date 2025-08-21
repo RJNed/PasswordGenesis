@@ -9,17 +9,8 @@
 
     <body>
         <section class="upper-container"> 
-            <!-- Make visually interesting with animations -->
-
-            <!-- Give advice for passwords such as where to store, what makes good password, methods of cracking passwords -->
-            <!-- Recommend password managers -->
-            <!-- FAQ: how does it work, how is this safe, etc -->
-
-            <!-- UI and layout Example: https://proton.me/pass/password-generator -->
-            <!-- Animation Example: https://www.avast.com/en-us/random-password-generator#pc -->
              
             <div class="userinput">
-
                 <div class = "left">
                     <h1>Generate a unique password!</h1>
                     <p>Genesis of security starts with a good password</p>
@@ -32,9 +23,7 @@
                 
                 <div class="center">
                     <div class="output">
-                        <output class="passdisplay" aria-live="polite"></output> <!-- I want to make the password display animated -->
-                        <!-- After about a second of random characters, left to right start dropping in the actual password -->
-                        <!-- This would be far more visually interesting -->
+                        <output class="passdisplay" aria-live="polite"></output>
                     </div>
                     <button type="button" class="newpassbtn" onclick="password()">Generate Password</button>
                 </div>
@@ -46,7 +35,7 @@
                         <p class="strength"></p>
                     </div>
                     <div class="right-mid">
-                        <p>Time to Crack:</p>
+                        <p>Time to Crack: </p>
                         <p class="timeToCrack"></p>
                     </div>
                     <div class="right-lower">

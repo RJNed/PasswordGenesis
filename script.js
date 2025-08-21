@@ -39,7 +39,6 @@ function clearError(){
   document.querySelector(".passdisplay").style.color = "white";
 }
 
-//I'm really happy about this function
 //Creates random index based off char length
 function randomize(charString){
   const randomValue = new Uint32Array(1);
@@ -55,7 +54,6 @@ function shuffle(array) {
   let remaining = array.length, temp, random;
 
   while (remaining) {
-    // review the --
     random = Math.floor(Math.random() * remaining--);
 
     temp = array[remaining];
@@ -76,8 +74,8 @@ function password(){
   const specials  = '!@#$%^*+=-_.';
   const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^*+=-_.';
 
-
-  //Added validation because common issue I saw with other password generators is that if you edited the slider max it would crash the tab or UI.
+  //Added input validation
+  //Common issue I saw with other password generators is that if you edited the slider max it would crash the tab or UI.
   if(inputValue<requiredSpace){
     showError("Password must be at least 4 characters long");
     return;
@@ -90,11 +88,12 @@ function password(){
     clearError();
   }
 
-  //Need to learn when to use let 
-  //I know its mutable and const is inmutable
+  //Do I need let? 
   let buildingarray = [];
 
-  //is this clear enough? should it be a for loop?
+  //is this clear enough? 
+  // Could this be a loop?
+  //Guarentees at least one lower, upper, digit, and symbol
   let lower = randomize(lowercase);
   buildingarray.push(lowercase[lower]);
 
@@ -104,9 +103,10 @@ function password(){
   let num = randomize(numbers);
   buildingarray.push(numbers[num]);
 
-  let spec = randomize(specials);
-  buildingarray.push(specials[spec]);
+  let symbol = randomize(specials);
+  buildingarray.push(specials[symbol]);
 
+  //User feedback for password strength
   const changeColor = document.getElementById("box");
   const changeStrength = document.querySelector(".strength");
   if(inputValue<=6){
@@ -140,10 +140,10 @@ function password(){
     document.querySelector(".timeToCrack").innerText="Off The Charts!"
   }
 
-  //Do I need to initate i here or should I rename it and place it else where?
+  //Do I need to initiate i here or should I rename it and place it else where?
   let i = 0
   const loopValue = inputValue - requiredSpace;
-  //is while okay here? or should it be a for loop?
+  //is a while loop okay to use?
   while( i<loopValue){
   let char = randomize(chars);
   i++;
@@ -165,8 +165,8 @@ sliderValue.addEventListener('input', (event) => {
   updateSliderVars(event.target);
 });
 
-//revist event listeners
-document.querySelector(".userinput").addEventListener("submit", function(event){
+//review event listeners
+document.querySelector(".center").addEventListener("submit", function(event){
   event.preventDefault();
   password();
 })

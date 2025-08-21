@@ -98,15 +98,25 @@ a{
 }
 
 .right-mid {
-  display: flex; 
-  align-items: center; 
-  gap: 8px;         
+  font-size: 18px;
+  font-weight: bolder;  
+  margin-bottom: 24px;
 }
 
 .right-lower{
   display: flex; 
   align-items: center; 
   gap: 8px; 
+}
+
+.right-mid p{
+	margin: 0px
+}
+
+#muted-p {
+color: var(--text-muted);
+  margin: 0px;
+  padding: 0px
 }
 
 .userpasslabel {
@@ -217,9 +227,6 @@ a{
 	border-radius: 4px;
 }
 
-#muted-p {
-	color: var(--text-muted);
-}
 
 /* Button */
 .newpassbtn {
