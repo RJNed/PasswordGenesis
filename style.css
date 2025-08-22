@@ -44,8 +44,116 @@ a{
 .upper-container {
 	width: 100%;
 	padding: 24px;
-	margin-top: 150px;
+	margin-top: 25px;
 }
+
+/* ---------- Password education section ---------- */
+.mid-container {
+  width: min(100%, 1280px);
+  margin: 28px auto 40px;
+  padding: clamp(18px, 3vw, 28px);
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--surface) 92%, transparent 8%), var(--surface)) padding-box,
+    radial-gradient(800px 280px at 8% -10%, color-mix(in oklab, var(--accent) 18%, transparent 82%), transparent),
+    radial-gradient(600px 240px at 110% 5%, color-mix(in oklab, var(--text-muted) 22%, transparent 78%), transparent);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  line-height: 1.7;
+}
+
+/* Headings */
+.mid-container h2,
+.mid-container h3 {
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mid-container h2 {
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 750;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.mid-container h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 72%;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in oklab, var(--accent) 30%, var(--text-muted)));
+  opacity: 0.9;
+}
+
+.mid-container h3 {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+  color: color-mix(in oklab, var(--text) 88%, var(--accent) 12%);
+  margin-top: clamp(16px, 2.2vw, 22px);
+  margin-bottom: 6px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.mid-container h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.28em;
+  width: 4px;
+  height: 0.9em;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent) 30%, var(--text-muted)));
+}
+
+/* Paragraphs */
+.mid-container p {
+  margin: 0 0 12px 0;
+  color: var(--text-muted);
+  font-size: clamp(0.98rem, 1.3vw, 1.05rem);
+}
+
+/* Spacing between groups */
+.mid-container h2 + p { margin-top: 10px; }
+.mid-container h3 + p { margin-top: 4px; }
+
+/* Gentle entrance animation (respects reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .mid-container > * {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: midFadeUp 520ms ease-out forwards;
+  }
+  .mid-container > *:nth-child(1) { animation-delay: 40ms; }
+  .mid-container > *:nth-child(2) { animation-delay: 80ms; }
+  .mid-container > *:nth-child(3) { animation-delay: 120ms; }
+  .mid-container > *:nth-child(4) { animation-delay: 160ms; }
+  .mid-container > *:nth-child(5) { animation-delay: 200ms; }
+  .mid-container > *:nth-child(6) { animation-delay: 240ms; }
+  .mid-container > *:nth-child(7) { animation-delay: 280ms; }
+  .mid-container > *:nth-child(8) { animation-delay: 320ms; }
+}
+
+@keyframes midFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Focus ring when tabbing into the section */
+.mid-container:focus-within {
+  box-shadow: 0 0 0 3px var(--ring), var(--shadow-lg);
+  transition: box-shadow 160ms ease-out;
+}
+
+/* Slightly larger padding on big screens */
+@media (min-width: 1100px) {
+  .mid-container { padding: 32px; }
+}
+
 
 .userinput {
 	display: grid;
@@ -74,7 +182,12 @@ a{
 }
 
 /* Typography */
-.left h1 {
+h1{
+	font-size: 60px;
+	text-align: center;
+	margin: 0px
+}
+.left h2 {
 	margin: 0 0 6px 0;
 	font-weight: 700;
 	font-size: clamp(1.25rem, 2.2vw, 1.75rem);
