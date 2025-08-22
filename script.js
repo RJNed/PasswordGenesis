@@ -160,13 +160,16 @@ function password(){
 output.innerHTML = sliderValue.value;
 updateSliderVars(sliderValue);
 
+
 sliderValue.addEventListener('input', (event) => {
   output.innerHTML = event.target.value;
   updateSliderVars(event.target);
+  password();
 });
 
 //review event listeners
 document.querySelector(".center").addEventListener("submit", function(event){
   event.preventDefault();
   password();
-})
+});
+
